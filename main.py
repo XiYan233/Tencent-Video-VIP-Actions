@@ -118,7 +118,7 @@ def wechat():
     data = {
         "msgtype": "markdown",
         "markdown": {
-            "content": "<font color=\"warning\">腾讯视频签到通知</font>\n" + resultContent
+            "content": "<font color=\"warning\" align="center">腾讯视频签到通知</font>\n" + resultContent
         }
     }
     r = requests.post(url='https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=' + key, headers=headers, json=data)
