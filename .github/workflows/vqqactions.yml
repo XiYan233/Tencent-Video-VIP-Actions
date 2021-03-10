@@ -23,8 +23,8 @@ jobs:
     
     - name: run main.py
       env:
-        SERVERCHAN_SCKEY: ${{ secrets.KEY }}
-        V_COOKIE_LOGIN: ${{ secrets.LOGIN_COOKIE }}
-        V_COOKIE_SIGNIN: ${{ secrets.SIGNIN_COOKIE }}
-        V_AUTH_REFRESH_URL: ${{ secrets.AUTH_REFRESH_URL }}
+        KEY: ${{ secrets.KEY }}
+        LOGIN_COOKIE: ${{ secrets.LOGIN_COOKIE }}
+        SIGNIN_COOKIE: ${{ secrets.SIGNIN_COOKIE }}
+        AUTH_REFRESH_URL: ${{ secrets.AUTH_REFRESH_URL }}
       run: python main.py
