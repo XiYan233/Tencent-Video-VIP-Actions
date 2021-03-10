@@ -53,7 +53,7 @@ for url in urls:
         print("发送每日签到任务请求")
     elif (count == 4):
         print("发送每日弹幕任务请求")
-        score = json.loads(response.text)["score"]
+        score = json.loads(responseContent)["score"]
         print(score)
     elif (count == 5):
         print("发送每日观影60分钟任务请求")
