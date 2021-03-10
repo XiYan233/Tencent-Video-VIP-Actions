@@ -1,0 +1,30 @@
+name: vppactions
+on:
+  watch:
+    types: [started]
+  schedule:
+    - cron: '0 15,22 * * *'
+
+jobs:
+  v-checkin:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: checkout
+      uses: actions/checkout@master
+    
+    - name: Set python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.8'
+    
+    - name: Install dependencies
+      run: python -m pip install --upgrade requests
+    
+    - name: run main.py
+      env:
+        SERVERCHAN_SCKEY: ${{ secrets.KEY }}
+        V_COOKIE_LOGIN: ${{ secrets.LOGIN_COOKIE }}
+        V_COOKIE_SIGNIN: ${{ secrets.SIGNIN_COOKIE }}
+        V_AUTH_REFRESH_URL: ${{ secrets.AUTH_REFRESH_URL }}
+      run: python main.py
