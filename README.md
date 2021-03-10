@@ -48,5 +48,7 @@ RK=T+S5fhzfX8; ptcz=930*******************************b8f0a7; tvfe_boss_uuid=468
 RK=T+S5fhzfX8; ptcz=930*******************************b8f0a7; tvfe_boss_uuid=468a9******; pgv_pvid=3565****6; video_guid=ad9841*****9; video_platform=2; ptui_loginuin=199******; main_login=qq; vqq_access_token=32*************; vqq_appid=10*********; vqq_openid=1**************; vqq_vuserid=1******; vqq_refresh_token=CA*****************; pgv_info=ssid=s84********; uid=2*****; vqq_next_refresh_time=6525; vqq_login_time_init=1*****; login_time_last=****
 ```
 4. 点击项目中的`Settings` --> `Secrets` --> `New repository secret`, `Name`值为`KEY` , `Value`值为`https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=xxxx-xxxx-xxxx-xxxx-xxxx`中的`xxxx-xxxx-xxxx-xxxx-xxxx`
-5. 点击 `Actions` 再点击 `I understand my workflows, go ahead and enable them`
-6. 首次使用需手动点击一次 `Start`
+
+## 启动Actions
+1. 点击 `Actions` 再点击 `I understand my workflows, go ahead and enable them`
+2. 首次使用需手动点击一次 `Start`
