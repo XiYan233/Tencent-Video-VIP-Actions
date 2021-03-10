@@ -1,3 +1,15 @@
+# 腾讯视频会员V力值自动签到 - Actions
+
+<p align="center">
+    <a href="https://github.com/Demontisa"><img alt="Author" src="https://img.shields.io/badge/author-Demontisa-blueviolet"/></a>
+    <img alt="PHP" src="https://img.shields.io/badge/code-Python-success"/>
+</p>
+通过调用官方接口，每天上午 06 点，以及晚上 23 点自动触发，借此可以达到快速升级的目的。
+
+一个账号平均耗时为3-5分钟左右。程序在GitHub Actions里自动运行不需要人工干预，每天自动领V力值，向你的企业微信发送任务通知。
+
+------
+
 ## 准备
 
 * `Fork` 本项目
