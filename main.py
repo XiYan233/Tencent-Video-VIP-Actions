@@ -81,7 +81,6 @@ def wechat():
     }
     r = requests.post(url='https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=' + key, headers=headers, json=data)
     data = json.loads(r.text)
-    self.log(r.text)
     logging.info(r.text)
     if data['errmsg'] == 'ok':
         logging.info('企业微信机器人推送成功')
