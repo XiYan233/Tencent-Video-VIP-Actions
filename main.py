@@ -47,25 +47,65 @@ for url in urls:
     count += 1
     if (count == 1):
         print("发送每日下载任务请求")
+        refresh_cookie = cookie['vqq_vusession']
+        headers_signin = {
+          'User-Agent': Agent,
+          'Cookie': signin_cookie + refresh_cookie + ';vqq_vusession=' + refresh_cookie + ';',
+          'Referer': Referer
+        }
+        response = requests.get(url=url, headers=headers_signin)
+        responseContent = response.content.decode("utf-8")
+        print(responseContent)
+        resultContent += '每日下载任务' + responseContent + '\n\n'
     elif (count == 2):
         print("发送每日赠片任务请求")
+        refresh_cookie = cookie['vqq_vusession']
+        headers_signin = {
+          'User-Agent': Agent,
+          'Cookie': signin_cookie + refresh_cookie + ';vqq_vusession=' + refresh_cookie + ';',
+          'Referer': Referer
+        }
+        response = requests.get(url=url, headers=headers_signin)
+        responseContent = response.content.decode("utf-8")
+        print(responseContent)
+        resultContent += '每日赠片任务' + responseContent + '\n\n'
     elif (count == 3):
         print("发送每日签到任务请求")
+        refresh_cookie = cookie['vqq_vusession']
+        headers_signin = {
+          'User-Agent': Agent,
+          'Cookie': signin_cookie + refresh_cookie + ';vqq_vusession=' + refresh_cookie + ';',
+          'Referer': Referer
+        }
+        response = requests.get(url=url, headers=headers_signin)
+        responseContent = response.content.decode("utf-8")
+        print(responseContent)
+        resultContent += '每日签到任务' + responseContent + '\n\n'
     elif (count == 4):
         print("发送每日弹幕任务请求")
+        refresh_cookie = cookie['vqq_vusession']
+        headers_signin = {
+          'User-Agent': Agent,
+          'Cookie': signin_cookie + refresh_cookie + ';vqq_vusession=' + refresh_cookie + ';',
+          'Referer': Referer
+        }
+        response = requests.get(url=url, headers=headers_signin)
+        responseContent = response.content.decode("utf-8")
+        print(responseContent)
+        resultContent += '每日弹幕任务' + responseContent + '\n\n'
     elif (count == 5):
         print("发送每日观影60分钟任务请求")
-    refresh_cookie = cookie['vqq_vusession']
-    headers_signin = {
-      'User-Agent': Agent,
-      'Cookie': signin_cookie + refresh_cookie + ';vqq_vusession=' + refresh_cookie + ';',
-      'Referer': Referer
-    }
-    response = requests.get(url=url, headers=headers_signin)
-    responseContent = response.content.decode("utf-8")
-    
-    print(responseContent)
-    resultContent += responseContent + '\n\n'
+         refresh_cookie = cookie['vqq_vusession']
+        headers_signin = {
+          'User-Agent': Agent,
+          'Cookie': signin_cookie + refresh_cookie + ';vqq_vusession=' + refresh_cookie + ';',
+          'Referer': Referer
+        }
+        response = requests.get(url=url, headers=headers_signin)
+        responseContent = response.content.decode("utf-8")
+
+        print(responseContent)
+        resultContent += '每日观影60分钟任务' + responseContent + '\n\n'
 
     
 '''
