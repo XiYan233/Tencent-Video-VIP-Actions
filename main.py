@@ -63,11 +63,32 @@ for url in urls:
     print(responseContent)
     resultContent += responseContent + '\n\n'
 
-params = {
-    "msgtype": "markdown",
-    "markdown": {
-        "content": "<font color=\"warning\">腾讯视频签到通知</font>\n" + resultContent
+    
+'''
+企业微信机器人推送
+'''
+def wechat():
+    if key == '':
+        return
+    headers = {"Content-Type": "text/plain"}
+    data = {
+        "msgtype": "markdown",
+        "markdown": {
+            "content": "<font color=\"warning\">腾讯视频签到通知</font>\n" + resultContent
+        }
     }
-}
-requests.post(send_url, params=params)
-print('已通知到企业微信')
+    r = requests.post(url='https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=' + key, headers=headers, json=data)
+    data = json.loads(r.text)
+    self.log(r.text)
+    logging.info(r.text)
+    if data['errmsg'] == 'ok':
+        self.log('用户:' + self.name + '  企业微信机器人推送成功')
+        logging.info('用户:' + self.name + '  企业微信机器人推送成功')
+    else:
+        self.log('用户:' + self.name + '  企业微信机器人推送失败,请检查key是否正确')
+        logging.info('用户:' + self.name + '  企业微信机器人推送失败,请检查key是否正确')
+        
+'''
+消息推送
+'''
+wechat()
