@@ -56,7 +56,7 @@ for url in urls:
         response = requests.get(url=url, headers=headers_signin)
         responseContent = response.content.decode("utf-8")
         print(responseContent)
-        resultContent += '每日下载任务' + responseContent + '\n\n'
+        resultContent += '> 每日下载任务`' + responseContent + '`\n\n'
     elif (count == 2):
         print("发送每日赠片任务请求")
         refresh_cookie = cookie['vqq_vusession']
@@ -68,7 +68,7 @@ for url in urls:
         response = requests.get(url=url, headers=headers_signin)
         responseContent = response.content.decode("utf-8")
         print(responseContent)
-        resultContent += '每日赠片任务' + responseContent + '\n\n'
+        resultContent += '> 每日赠片任务`' + responseContent + '`\n\n'
     elif (count == 3):
         print("发送每日签到任务请求")
         refresh_cookie = cookie['vqq_vusession']
@@ -80,7 +80,7 @@ for url in urls:
         response = requests.get(url=url, headers=headers_signin)
         responseContent = response.content.decode("utf-8")
         print(responseContent)
-        resultContent += '每日签到任务' + responseContent + '\n\n'
+        resultContent += '> 每日签到任务`' + responseContent + '`\n\n'
     elif (count == 4):
         print("发送每日弹幕任务请求")
         refresh_cookie = cookie['vqq_vusession']
@@ -92,7 +92,7 @@ for url in urls:
         response = requests.get(url=url, headers=headers_signin)
         responseContent = response.content.decode("utf-8")
         print(responseContent)
-        resultContent += '每日弹幕任务' + responseContent + '\n\n'
+        resultContent += '> 每日弹幕任务`' + responseContent + '`\n\n'
     elif (count == 5):
         print("发送每日观影60分钟任务请求")
         refresh_cookie = cookie['vqq_vusession']
@@ -105,7 +105,7 @@ for url in urls:
         responseContent = response.content.decode("utf-8")
 
         print(responseContent)
-        resultContent += '每日观影60分钟任务' + responseContent + '\n\n'
+        resultContent += '> 每日观影60分钟任务`' + responseContent + '`\n\n'
 
     
 '''
@@ -118,7 +118,7 @@ def wechat():
     data = {
         "msgtype": "markdown",
         "markdown": {
-            "content": "<font color=\"warning\" align="center">腾讯视频签到通知</font>\n" + resultContent
+            "content": "<font color=\"warning\">腾讯视频签到通知</font>\n" + resultContent
         }
     }
     r = requests.post(url='https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=' + key, headers=headers, json=data)
