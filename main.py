@@ -42,6 +42,7 @@ urls = [
 ]
 count = 0
 resultContent = ''
+score = 0
 for url in urls:
     count += 1
     if (count == 1):
@@ -62,6 +63,8 @@ for url in urls:
     }
     response = requests.get(url=url, headers=headers_signin)
     responseContent = response.content.decode("utf-8")
+    score = json.loads(response.text)['score']
+    print(score)
     print(responseContent)
     resultContent += responseContent + '\n\n'
 
