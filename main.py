@@ -95,7 +95,7 @@ for url in urls:
         resultContent += '每日弹幕任务' + responseContent + '\n\n'
     elif (count == 5):
         print("发送每日观影60分钟任务请求")
-         refresh_cookie = cookie['vqq_vusession']
+        refresh_cookie = cookie['vqq_vusession']
         headers_signin = {
           'User-Agent': Agent,
           'Cookie': signin_cookie + refresh_cookie + ';vqq_vusession=' + refresh_cookie + ';',
