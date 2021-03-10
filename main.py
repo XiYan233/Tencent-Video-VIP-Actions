@@ -53,6 +53,8 @@ for url in urls:
         print("发送每日签到任务请求")
     elif (count == 4):
         print("发送每日弹幕任务请求")
+        score = json.loads(response.text)['score']
+        print(score)
     elif (count == 5):
         print("发送每日观影60分钟任务请求")
     refresh_cookie = cookie['vqq_vusession']
@@ -63,8 +65,7 @@ for url in urls:
     }
     response = requests.get(url=url, headers=headers_signin)
     responseContent = response.content.decode("utf-8")
-    score = json.loads(response.text)['score']
-    print(score)
+    
     print(responseContent)
     resultContent += responseContent + '\n\n'
 
