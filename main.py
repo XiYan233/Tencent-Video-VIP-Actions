@@ -192,7 +192,7 @@ def wechat():
     data = {
         "msgtype": "markdown",
         "markdown": {
-            "content": "<font color=\"warning\">腾讯视频签到通知</font>\n" + '> 当前会员等级为：' + str(level) + '\n > 会员到期时间：' + str(endTime) + '\n > 当前V力值：' + str(vNumber) + '/n > 升到下一等级还需：' + str(upgrade_score) + 'V力值' + '\n > 预计升到下一等级还需' + str(upgrade_times) + '天 \n' + '\n 运行日志：\n' + resultContent + '\n 会员信息查询日志: \n > ' + vip_info
+            "content": "<font color=\"warning\">腾讯视频签到通知</font>\n" + '> 当前会员等级为：' + str(level) + '\n > 会员到期时间：' + str(endTime) + '\n > 当前V力值：' + str(vNumber) + '\n > 升到下一等级还需：' + str(upgrade_score) + 'V力值' + '\n > 预计升到下一等级还需' + str(upgrade_times) + '天 \n' + '\n 运行日志：\n' + resultContent + '\n 会员信息查询日志: \n > ' + vip_info
         }
     }
     r = requests.post(url='https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=' + key, headers=headers, json=data)
