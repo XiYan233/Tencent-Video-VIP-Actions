@@ -55,6 +55,7 @@ urls = [
     # 观看60分钟签到
     'https://vip.video.qq.com/fcgi-bin/comm_cgi?name=payvip&cmd=1&otype=json&getannual=1&callback=会员信息',
     # 获取总会员信息
+    'https://vip.video.qq.com/fcgi-bin/comm_cgi?name=spp_vscore_user_mashup&type=2&otype=xjson',
 ]
 count = 0
 score = 0
@@ -180,7 +181,17 @@ for url in urls:
         #vip_info = rest
         #print(responseContent)
 
-
+    elif (count == 7):
+        print("获取会员信息")
+        headers_signin = {
+          'User-Agent': Agent,
+          'Cookie': signin_cookie + refresh_cookie + ';vqq_vusession=' + refresh_cookie + ';',
+          'Referer': 'https://film.qq.com/'
+        }
+        response = requests.get(url=url, headers=headers_signin)
+    
+        info = re.findall(r'[^()]+', response.content.decode("utf-8"))[1]
+        print(info)
     
 '''
 企业微信机器人推送
