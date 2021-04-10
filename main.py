@@ -180,18 +180,6 @@ for url in urls:
         print('升到下一级还需' + str(upgrade_times) + '天')
         #vip_info = rest
         #print(responseContent)
-
-    elif (count == 7):
-        print("获取会员信息")
-        headers_signin = {
-          'User-Agent': Agent,
-          'Cookie': signin_cookie + refresh_cookie + ';vqq_vusession=' + refresh_cookie + ';',
-          'Referer': 'https://film.qq.com/'
-        }
-        response = requests.get(url=url, headers=headers_signin)
-    
-        info = re.findall(r'[^()]+', response.content.decode("utf-8"))[1]
-        print(info)
     
 '''
 企业微信机器人推送
